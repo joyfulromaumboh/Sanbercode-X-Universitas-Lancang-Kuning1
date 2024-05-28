@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TableController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,6 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/form', [HomeController::class, 'form'])->name('form');
-Route::post('/welcome', [AuthController::class, 'welcome'])->name('welcome');
+Route::post('/welkom', [AuthController::class, 'welcome'])->name('welcome');
+Route::get("/table", [TableController::class, "get_table"])->name('table');
+Route::get("/data-table", [TableController::class, "get_dataTable"])->name('data-table');
